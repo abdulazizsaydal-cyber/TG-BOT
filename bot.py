@@ -64,7 +64,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
         await query.edit_message_text(
-            "Target orqali sotuv qilsa bo'ladimi? Shu kabi barcha savollarga javob shu videoimizda!\n\nAmaranth mebel loyihamiz — 1 oyda $100,000 sotuv 🔥\n\nTo'liq ko'rish uchun link orqali YouTube ga kiring 👇\n\n"
+            "Target orqali sotuv qilsa bo'ladimi ? Shu kabi barcha savollarga javob shu videoimizda !\nAmaranth mebel loyihamiz - 1 oyda $100,000 sotuv To'liq ko'rish uchun link orqali You tube kiring !\n\n"
             f"{VIDEO_BIZNES}"
         )
 
@@ -79,7 +79,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
         await query.edit_message_text(
-            "Target orqali sotuv qilsa bo'ladimi? Shu kabi barcha savollarga javob shu videoimizda!\n\nAmaranth mebel loyihamiz — 1 oyda $100,000 sotuv 🔥\n\nTo'liq ko'rish uchun link orqali YouTube ga kiring 👇\n\n"
+            "Target orqali sotuv qilsa bo'ladimi ? Shu kabi barcha savollarga javob shu videoimizda !\nAmaranth mebel loyihamiz - 1 oyda $100,000 sotuv To'liq ko'rish uchun link orqali You tube kiring !\n\n"
             f"{VIDEO_TARGETCHI}\n\n"
             f"Savollar bo'lsa, yozing 👉 {ADMIN}"
         )
