@@ -1,6 +1,7 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 import logging
+import asyncio
 
 logging.basicConfig(level=logging.INFO)
 
@@ -8,8 +9,23 @@ BOT_TOKEN = "8769414302:AAHpS0oe7Rg1Rj9lRsn_2E4NkVt8oQ5JcCE"
 VIDEO_BIZNES = "https://youtu.be/kMNRNFFF_wI"
 VIDEO_TARGETCHI = "https://youtu.be/kMNRNFFF_wI"
 FORM_LINK = "https://forms.gle/kLeUtvdVNAmphYid7"
-ADMIN = "@Abdul.saydal"
+ADMIN = "@abdulazizsaydaliyev"
 ADMIN_ID = 1455425842
+
+DELAY_SECONDS = 30 * 60  # 30 daqiqa
+
+
+async def send_form_later(context: ContextTypes.DEFAULT_TYPE, chat_id: int):
+    await asyncio.sleep(DELAY_SECONDS)
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=(
+            "Target xizmatimiz orqali siz ham mijozlaringiz oqimini oshiring!\n\n"
+            "📌 Joylar soni cheklangan — ulgurib qoling.\n"
+            "Ro'yxatdan o'ting va bepul konsultatsiyaga ega bo'ling 👇\n\n"
+            f"{FORM_LINK}"
+        )
+    )
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -38,6 +54,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     user = query.from_user
     username = f"@{user.username}" if user.username else "username yo'q"
+    chat_id = query.message.chat_id
 
     if query.data == "biznes":
         if ADMIN_ID:
@@ -46,22 +63,13 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 text=f"✅ {user.full_name} ({username}) — Biznes egasi tugmasini bosdi"
             )
 
-        # 1 — Video
         await query.edit_message_text(
             "Mebel biznesida 1 oyda $100,000 sotuv qilgan mijozimiz targeting haqida o'zi gapirib beradi 👇\n\n"
             f"{VIDEO_BIZNES}"
         )
 
-        # 2 — Form
-        await context.bot.send_message(
-            chat_id=query.message.chat_id,
-            text=(
-                "Target xizmatimiz orqali siz ham mijozlaringiz oqimini oshiring!\n\n"
-                "📌 Joylar soni cheklangan — ulgurib qoling.\n"
-                "Ro'yxatdan o'ting va bepul konsultatsiyaga ega bo'ling 👇\n\n"
-                f"{FORM_LINK}"
-            )
-        )
+        # 30 daqiqadan keyin form yuborish
+        asyncio.create_task(send_form_later(context, chat_id))
 
     elif query.data == "targetchi":
         if ADMIN_ID:
