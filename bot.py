@@ -8,7 +8,7 @@ BOT_TOKEN = "8769414302:AAHpS0oe7Rg1Rj9lRsn_2E4NkVt8oQ5JcCE"
 VIDEO_BIZNES = "https://youtu.be/kMNRNFFF_wI"
 VIDEO_TARGETCHI = "https://youtu.be/kMNRNFFF_wI"
 ADMIN = "@Abdul.saydal"
-ADMIN_ID = None  # Quyida tushuntiraman
+ADMIN_ID = 1455425842
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
