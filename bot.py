@@ -7,6 +7,7 @@ logging.basicConfig(level=logging.INFO)
 BOT_TOKEN = "8769414302:AAHpS0oe7Rg1Rj9lRsn_2E4NkVt8oQ5JcCE"
 VIDEO_BIZNES = "https://youtu.be/kMNRNFFF_wI"
 VIDEO_TARGETCHI = "https://youtu.be/kMNRNFFF_wI"
+FORM_LINK = "https://forms.gle/kLeUtvdVNAmphYid7"
 ADMIN = "@Abdul.saydal"
 ADMIN_ID = 1455425842
 
@@ -16,7 +17,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = user.full_name
     username = f"@{user.username}" if user.username else "username yo'q"
 
-    # Admin ga xabar yuborish
     if ADMIN_ID:
         await context.bot.send_message(
             chat_id=ADMIN_ID,
@@ -40,16 +40,27 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = f"@{user.username}" if user.username else "username yo'q"
 
     if query.data == "biznes":
-        # Admin ga tanlov xabari
         if ADMIN_ID:
             await context.bot.send_message(
                 chat_id=ADMIN_ID,
                 text=f"✅ {user.full_name} ({username}) — Biznes egasi tugmasini bosdi"
             )
+
+        # 1 — Video
         await query.edit_message_text(
             "Mebel biznesida 1 oyda $100,000 sotuv qilgan mijozimiz targeting haqida o'zi gapirib beradi 👇\n\n"
-            f"{VIDEO_BIZNES}\n\n"
-            f"Biz bilan ishlashni xohlasangiz, murojaat qiling 👉 {ADMIN}"
+            f"{VIDEO_BIZNES}"
+        )
+
+        # 2 — Form
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=(
+                "Target xizmatimiz orqali siz ham mijozlaringiz oqimini oshiring!\n\n"
+                "📌 Joylar soni cheklangan — ulgurib qoling.\n"
+                "Ro'yxatdan o'ting va bepul konsultatsiyaga ega bo'ling 👇\n\n"
+                f"{FORM_LINK}"
+            )
         )
 
     elif query.data == "targetchi":
@@ -58,6 +69,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 chat_id=ADMIN_ID,
                 text=f"✅ {user.full_name} ({username}) — Targetolog tugmasini bosdi"
             )
+
         await query.edit_message_text(
             "Targeting orqali mijozlar uchun real natija chiqarish va o'z daromadingizni oshirish haqida to'liq ma'lumot 👇\n\n"
             f"{VIDEO_TARGETCHI}\n\n"
