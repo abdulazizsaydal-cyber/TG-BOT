@@ -52,7 +52,7 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         )
     )
 
-    await asyncio.sleep(30 * 60)  # 30 daqiqa
+    await asyncio.sleep(1 * 60)  # 30 daqiqa
 
     # --- 2-xabar: Natijalar + Uzqurilish ---
     await context.bot.send_message(
@@ -75,7 +75,7 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         )
     )
 
-    await asyncio.sleep(15 * 60)  # 15 daqiqa
+    await asyncio.sleep(1 * 60)  # 15 daqiqa
 
     # --- 3-xabar: Aziz Uylar otzyiv video ---
     await context.bot.send_message(
@@ -93,7 +93,7 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         message_id=VIDEO_AZIZ
     )
 
-    await asyncio.sleep(15 * 60)  # 15 daqiqa
+    await asyncio.sleep(1 * 60)  # 15 daqiqa
 
     # --- 4-xabar: Canvas.design otzyiv video ---
     await context.bot.send_message(
@@ -110,7 +110,7 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         message_id=VIDEO_CANVAS
     )
 
-    await asyncio.sleep(15 * 60)  # 15 daqiqa
+    await asyncio.sleep(1 * 60)  # 15 daqiqa
 
     # --- 5-xabar: O'zbegim otzyiv video ---
     await context.bot.send_message(
@@ -127,7 +127,7 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         message_id=VIDEO_OZBEGIM
     )
 
-    await asyncio.sleep(30 * 60)  # 30 daqiqa
+    await asyncio.sleep(1 * 60)  # 30 daqiqa
 
     # --- 6-xabar: Taklif ---
     await context.bot.send_message(
