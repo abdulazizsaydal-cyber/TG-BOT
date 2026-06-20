@@ -17,10 +17,6 @@ VIDEO_CANVAS = 3
 VIDEO_AZIZ = 4
 VIDEO_OZBEGIM = 5
 
-# TEST: 1 daqiqa | REAL: o'zgartiring
-DELAY_SHORT = 1 * 60
-DELAY_LONG = 1 * 60
-
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -56,7 +52,7 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         )
     )
 
-    await asyncio.sleep(DELAY_LONG)
+    await asyncio.sleep(30 * 60)
 
     # --- 2-xabar: Umumiy natijalar ---
     await context.bot.send_message(
@@ -65,14 +61,15 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
             "Ko'pchilik biznes egalari targetga pul sarflaydi — natija ko'rmaydi\n\n"
             "Sababi oddiy — noto'g'ri strategiya noto'g'ri kreativ noto'g'ri auditoriya\n\n"
             "Biz boshqacha yondashamiz Mana haqiqiy natijalar:\n\n"
-            "✅ Canvas.design — $1,000 reklama bilan $12,000 sotuv 4,000+ sifatli obunachi ROAS 12X\n"
+            "✅ Canvas design — $1,000 reklama bilan $12,000 sotuv 4,000+ sifatli obunachi ROAS 12X\n"
             "✅ Aziz Uylar — $2,814 reklama bilan $6,000,000 lik uylar sotildi 10,000+ obunachi\n"
             "✅ Amaranth Mebel — $2,000 reklama bilan $100,000 sotuv ROAS 50X\n"
-            "✅ Uzqurilish — 2 hafta ichida 15,000+ Telegram obunachi 131 mln+ ko'rinish $10,000,000+ sotuv"
+            "✅ Uzqurilish — 2 hafta ichida 15,000+ Telegram obunachi 131 mln+ ko'rinish $10,000,000+ sotuv\n\n"
+            f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
         )
     )
 
-    await asyncio.sleep(DELAY_SHORT)
+    await asyncio.sleep(15 * 60)
 
     # --- 3-xabar: Uzqurilish ---
     await context.bot.send_message(
@@ -84,11 +81,12 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
             "Barcha videolari 100,000+ ko'rishga chiqdi\n"
             "131,490,113 marta ko'rinish — O'zbekiston auditoriyasini 2-3 marta aylanib chiqdik\n\n"
             "Kanal orqali sotilgan uylar — $10,000,000+\n\n"
-            "Bu faqat reklama emas — to'g'ri strategiya tizimli ish va har bir loyihaga alohida yondashuv natijasi"
+            "Bu faqat reklama emas — to'g'ri strategiya tizimli ish va har bir loyihaga alohida yondashuv natijasi\n\n"
+            f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
         )
     )
 
-    await asyncio.sleep(DELAY_SHORT)
+    await asyncio.sleep(15 * 60)
 
     # --- 4-xabar: Aziz Uylar otzyiv ---
     await context.bot.send_message(
@@ -105,8 +103,12 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         from_chat_id=MEDIA_CHANNEL,
         message_id=VIDEO_AZIZ
     )
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
+    )
 
-    await asyncio.sleep(DELAY_SHORT)
+    await asyncio.sleep(15 * 60)
 
     # --- 5-xabar: Canvas.design otzyiv ---
     await context.bot.send_message(
@@ -123,8 +125,12 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         from_chat_id=MEDIA_CHANNEL,
         message_id=VIDEO_CANVAS
     )
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
+    )
 
-    await asyncio.sleep(DELAY_SHORT)
+    await asyncio.sleep(15 * 60)
 
     # --- 6-xabar: O'zbegim otzyiv ---
     await context.bot.send_message(
@@ -141,10 +147,14 @@ async def biznes_flow(context: ContextTypes.DEFAULT_TYPE, chat_id: int, user):
         from_chat_id=MEDIA_CHANNEL,
         message_id=VIDEO_OZBEGIM
     )
+    await context.bot.send_message(
+        chat_id=chat_id,
+        text=f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
+    )
 
-    await asyncio.sleep(DELAY_LONG)
+    await asyncio.sleep(30 * 60)
 
-    # --- 7-xabar: Taklif ---
+    # --- 7-xabar: Yakuniy taklif ---
     await context.bot.send_message(
         chat_id=chat_id,
         text=(
