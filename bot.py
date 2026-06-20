@@ -45,11 +45,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def biznes_flow(bot, chat_id, user):
     username = f"@{user.username}" if user.username else "username yo'q"
 
-    # 1 — YouTube video
-    await send(bot, chat_id,
-        "Target orqali sotuv qilsa bo'ladimi ? Shu kabi barcha savollarga javob shu videoimizda !\n"
-        "Amaranth mebel loyihamiz - 1 oyda $100,000 sotuv To'liq ko'rish uchun link orqali You tube kiring !\n\n"
-        f"{VIDEO_BIZNES}"
+    # 1 — YouTube video (preview yoqiq)
+    await bot.send_message(
+        chat_id=chat_id,
+        text=(
+            "Target orqali sotuv qilsa bo'ladimi ? Shu kabi barcha savollarga javob shu videoimizda !\n"
+            "Amaranth mebel loyihamiz - 1 oyda $100,000 sotuv To'liq ko'rish uchun link orqali You tube kiring !\n\n"
+            f"{VIDEO_BIZNES}"
+        )
     )
 
     await asyncio.sleep(30)
