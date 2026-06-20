@@ -55,7 +55,7 @@ async def biznes_flow(bot, chat_id, user):
         )
     )
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(1800)  # 30 daqiqa
 
     # 2 — Umumiy natijalar
     await send(bot, chat_id,
@@ -69,7 +69,7 @@ async def biznes_flow(bot, chat_id, user):
         f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
     )
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(900)  # 15 daqiqa
 
     # 3 — Uzqurilish
     await send(bot, chat_id,
@@ -83,7 +83,7 @@ async def biznes_flow(bot, chat_id, user):
         f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}"
     )
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(900)  # 15 daqiqa
 
     # 4 — Aziz Uylar
     await send(bot, chat_id,
@@ -95,7 +95,7 @@ async def biznes_flow(bot, chat_id, user):
     await bot.forward_message(chat_id=chat_id, from_chat_id=MEDIA_CHANNEL, message_id=VIDEO_AZIZ)
     await send(bot, chat_id, f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}")
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(900)  # 15 daqiqa
 
     # 5 — Canvas.design
     await send(bot, chat_id,
@@ -107,7 +107,7 @@ async def biznes_flow(bot, chat_id, user):
     await bot.forward_message(chat_id=chat_id, from_chat_id=MEDIA_CHANNEL, message_id=VIDEO_CANVAS)
     await send(bot, chat_id, f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}")
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(900)  # 15 daqiqa
 
     # 6 — O'zbegim
     await send(bot, chat_id,
@@ -119,7 +119,7 @@ async def biznes_flow(bot, chat_id, user):
     await bot.forward_message(chat_id=chat_id, from_chat_id=MEDIA_CHANNEL, message_id=VIDEO_OZBEGIM)
     await send(bot, chat_id, f"👇 Bepul konsultatsiyaga yoziling:\n{FORM_LINK}")
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(1800)  # 30 daqiqa
 
     # 7 — Yakuniy taklif
     await send(bot, chat_id,
